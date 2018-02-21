@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-
+let bien: string|number = 12;
 interface Hocsinh {
 	name: string,
 	age: number,
 	type: string,
 }
-let Quyen: Hocsinh = {
+let quyen: Hocsinh = {
 	name: "Nguyen Quyen",
 	age: 29,
 	type: "Hoc sinh xuất sắc",
@@ -19,7 +19,7 @@ let printInfo: any = (Quyen: Hocsinh) => {
 		console.log('Tên: ' + Quyen.name + ' Tuổi: ' + Quyen.age + ' Xếp loại: ' + Quyen.type);
 	}
 }
-printInfo(Quyen);
+printInfo(quyen);
 
 @Component({
   selector: 'app-root',
