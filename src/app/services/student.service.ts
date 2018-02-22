@@ -13,4 +13,7 @@ export class StudentService {
   GetList(): Observable<any[]> {
     return this._http.get(this.apiUrl).map((response: Response) => response.json());
   }
+  GetDetailStudent(id: number): Observable<any> {
+    return this._http.get(this.apiUrl + '/' + id).map((response: Response) => response.json());
+  }
 }

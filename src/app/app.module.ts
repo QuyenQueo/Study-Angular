@@ -3,26 +3,42 @@ import { NgModule } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './HeroesComponent/heroes.component';
 import { HighlightDirective } from './HeroesComponent/highlight.directive';
 import { StudentComponent } from './Student/student.component';
 import { StudentService } from './services/student.service';
+import { HomeComponent } from './Home/home.component';
+import { appRoutes } from './app.routes';
+import { DetailStudentComponent } from './StudentDetail/detailstudent.component';
+import { LoginComponent } from './Login/login.component';
+import { NotFoundComponent } from './404/404';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HighlightDirective,
-    StudentComponent
+    StudentComponent,
+    HomeComponent,
+    NotFoundComponent,
+    DetailStudentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    appRoutes,
+    FormsModule,
   ],
-  providers: [StudentService],
+  providers: [
+    StudentService,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
