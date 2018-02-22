@@ -16,6 +16,7 @@ import { appRoutes } from './app.routes';
 import { DetailStudentComponent } from './StudentDetail/detailstudent.component';
 import { LoginComponent } from './Login/login.component';
 import { NotFoundComponent } from './404/404';
+import { CheckLoginGuard } from './guards/check-login.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { NotFoundComponent } from './404/404';
     HomeComponent,
     NotFoundComponent,
     DetailStudentComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import { NotFoundComponent } from './404/404';
   ],
   providers: [
     StudentService,
-    LoginService
+    LoginService,
+    CheckLoginGuard
   ],
   bootstrap: [AppComponent]
 })
