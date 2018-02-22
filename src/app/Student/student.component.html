@@ -1,12 +1,44 @@
 <h2>List Student</h2>
-<ul>
-    <li *ngFor="let item of listStudent">
-        <p><span>Học Sinh: </span>{{ item.id }}</p>
-        <p><span>Tên: </span>{{ item.name }}</p>
-        <p><span>Image: </span>{{ item.imageUrl }}</p>
-        <p><span>Age: </span>{{ item.age }}</p>
-        <p><span>Type: </span>{{ item.type }}</p>
-        <p><span>Điểm số: </span>{{ item.score }}</p>
-        <p><span>Là học sinh giỏi: </span>{{ item.id }}</p>
-    </li>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Học sinh</th>
+      <th>Tên</th>
+      <th>Image</th>
+      <th>Age</th>
+      <th>Xếp loại học sinh</th>
+      <th>Điểm số</th>
+      <th>Là học sinh giỏi</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listStudent">
+      <td>
+      	<p>{{ item.id }}</p>
+      </td>
+      <td>
+      	<p>{{ item.name }}</p>
+      </td>
+      <td>
+      	<p>{{ item.imageUrl }}</p>
+      </td>
+      <td>
+      	<p>{{ item.age }}</p>
+      </td>
+      <td>
+      	<p>{{ item.Type }}</p>
+      </td>
+      <td>
+      	<p>{{ item.score }}</p>
+      </td>
+      <td>
+      	<p>{{ item.id }}</p>
+      </td>
+      <td>
+      	<button type="button" class="delete">Delete</button>
+      	<button type="button" class="blue">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

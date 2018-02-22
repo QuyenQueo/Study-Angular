@@ -1,0 +1,23 @@
+.table {
+  border: 1px solid #ddd;
+  border-spacing: 0px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 15px
+}
+button {
+  cursor: pointer;
+}
+.delete {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 4px
+}
+.blue {
+  background: blue;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+}
