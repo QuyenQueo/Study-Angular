@@ -8,9 +8,6 @@ import { ConfigService } from './config.service';
 export class ConfigComponent {
   constructor(private configService: ConfigService) {}
   showConfig() {
-    this.configService.getConfig().subscribe(data => this.config = {
-      heroesUrl: data['heroesUrl'],
-      textfile: data['textfile']
-    })
+    this.configService.getConfig().subscribe()
   }
 }
