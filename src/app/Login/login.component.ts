@@ -10,10 +10,17 @@ import { LoginService } from '../services/login.service';
 })
 
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private checkLogin: LoginService) {}
+  constructor(
+  	private router: Router,
+  	private loginService: LoginService
+  ) {}
 
   CheckLogin(value: any) {
-    console.log(value);
+    if (value.username == 'admin' && value.password == '123') {
+    	this.loginService.SetLogin(true);
+    	this.router.navigate(['/']);
+    	alert('Login là admin')
+    }
     // this.router.navigate(['/'])
   }
 

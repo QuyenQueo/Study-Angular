@@ -4,6 +4,7 @@ import { StudentComponent } from './Student/student.component';
 import { NotFoundComponent } from './404/404';
 import { DetailStudentComponent } from './StudentDetail/detailstudent.component';
 import { LoginComponent } from './Login/login.component';
+import { CheckLoginGuard } from './guards/check-login.guard';
 
 const routing: Routes = [
 	{ 
@@ -11,11 +12,13 @@ const routing: Routes = [
 		component: StudentComponent,
 		data: { title: 'Trang quản lí sinh viên' },
 		pathMatch: 'full',
+		canActivate: [CheckLoginGuard]
 	},
 	{ 
 		path: 'student',
 		component: StudentComponent,
 		data: { pageTitle: 'Danh sách sinh viên' },
+		canActivate: [CheckLoginGuard]
 	},
 	{ 
 		path: 'detail-student/:id',
