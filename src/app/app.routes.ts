@@ -9,16 +9,14 @@ import { CheckLoginGuard } from './guards/check-login.guard';
 const routing: Routes = [
 	{ 
 		path: '',
-		component: StudentComponent,
+		component: HomeComponent,
 		data: { title: 'Trang quản lí sinh viên' },
-		pathMatch: 'full',
-		canActivate: [CheckLoginGuard]
 	},
 	{ 
 		path: 'student',
 		component: StudentComponent,
 		data: { pageTitle: 'Danh sách sinh viên' },
-		canActivate: [CheckLoginGuard]
+		// canActivate: [CheckLoginGuard]
 	},
 	{ 
 		path: 'detail-student/:id',

@@ -18,8 +18,9 @@ export class LoginComponent implements OnInit {
   CheckLogin(value: any) {
     if (value.username == 'admin' && value.password == '123') {
     	this.loginService.SetLogin(true);
-    	this.router.navigate(['/']);
-    	alert('Login là admin')
+    	this.router.navigate(['/student']);
+    } else {
+      
     }
     // this.router.navigate(['/'])
   }
