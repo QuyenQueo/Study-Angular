@@ -17,6 +17,7 @@ import { DetailStudentComponent } from './StudentDetail/detailstudent.component'
 import { LoginComponent } from './Login/login.component';
 import { NotFoundComponent } from './404/404';
 import { CheckLoginGuard } from './guards/check-login.guard';
+import { EditStudentComponent } from './StudentDetail/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CheckLoginGuard } from './guards/check-login.guard';
     NotFoundComponent,
     DetailStudentComponent,
     LoginComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,
