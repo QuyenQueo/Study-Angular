@@ -3,6 +3,7 @@ import { HomeComponent } from './Home/home.component';
 import { StudentComponent } from './Student/student.component';
 import { NotFoundComponent } from './404/404';
 import { DetailStudentComponent } from './StudentDetail/detailstudent.component';
+import { EditStudentComponent } from './StudentDetail/edit-student.component';
 import { LoginComponent } from './Login/login.component';
 import { CheckLoginGuard } from './guards/check-login.guard';
 
@@ -21,6 +22,10 @@ const routing: Routes = [
 	{ 
 		path: 'detail-student/:id',
 		component: DetailStudentComponent,
+	},
+	{ 
+		path: 'edit-student/:id',
+		component: EditStudentComponent,
 	},
 	{
 		path: 'login',
