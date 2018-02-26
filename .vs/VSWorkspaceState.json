@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Student"
+    "\\src\\app\\Student",
+    "\\src\\app\\StudentDetail"
   ],
-  "SelectedNode": "\\src\\app\\Student\\student.component.html",
+  "SelectedNode": "\\src\\app\\StudentDetail\\edit-student.component.ts",
   "PreviewInSolutionExplorer": false
 }

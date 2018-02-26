@@ -1,5 +1,5 @@
 <h2 class="text-center">Edit Student</h2>
-<form #f="ngForm" (ngSubmit)="SaveForm()" class="form-edit container-fluid">
+<form #f="ngForm" (ngSubmit)="SaveForm()" class="form-edit container-fluid" *ngIf="studentEdit">
   <div class="form-group row">
     <label for="staticName" class="col-sm-4 col-form-label">Tên</label>
     <div class="col-sm-8">
