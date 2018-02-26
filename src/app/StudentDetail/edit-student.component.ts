@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
 import {StudentService} from '../services/student.service';
 
 @Component({
@@ -9,22 +9,32 @@ import {StudentService} from '../services/student.service';
 	styleUrls: ['edit-student.component.css']
 })
 
-export class EditStudentComponent implements OnInit {
+export class EditStudentComponent implements OnInit, OnDestroy {
 
-	private studentEdit: any;
-	private _id: number;
+	public studentEdit: any;
+  public _id: number;
+  public subscription: Subscription;
 
 	constructor(
 		private studentServide: StudentService,
-		private router: Router
+    private activatedRoute: ActivatedRoute,
 	) {}
-	
-	ngOnInit() {
-		this._id = this.router.params['id']
-		showStudentEdit(id: number) {
-			this.studentServide.GetDetailStudent(id).subscribe(response => {
-				this.studentEdit = response;
-			})
-		}
+
+	showStudentEdit(id: number) {
+		this.studentServide.GetDetailStudent(id).subscribe(student => {
+			this.studentEdit = student;
+			console.log('day la hocj ssinh', this.studentEdit);
+		})
 	}
+
+	ngOnInit() {
+    this.subscription = this.activatedRoute.params.subscribe(params => {
+      this._id = params['id'];
+      this.showStudentEdit(this._id);
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

@@ -1,33 +1,37 @@
 <h2 class="text-center">Edit Student</h2>
-<form #f="ngForm" class="form-edit container-fluid">
+<form #f="ngForm" (ngSubmit)="SaveForm()" class="form-edit container-fluid">
   <div class="form-group row">
     <label for="staticName" class="col-sm-4 col-form-label">Tên</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticName" value="Name" [(ngModel)]="detaiStudent.name" />
+      <input type="text" id="staticName" name="name" [(ngModel)]="studentEdit.name" />
     </div>
   </div>
   <div class="form-group row">
     <label for="staticImage" class="col-sm-4 col-form-label">Image</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticImage" value="Image" [(ngModel)]="detaiStudent.imageUrl">
+      <input type="text" id="staticImage" name="Image" [(ngModel)]="studentEdit.imageUrl">
     </div>
   </div>
   <div class="form-group row">
     <label for="staticAge" class="col-sm-4 col-form-label">Tuổi</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticAge" value="Age" [(ngModel)]="detaiStudent.age">
+      <input type="text" id="staticAge" name="Age" [(ngModel)]="studentEdit.age">
     </div>
   </div>
   <div class="form-group row">
     <label for="staticType" class="col-sm-4 col-form-label">Xếp loại học sinh</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticType" value="Type" [(ngModel)]="detaiStudent.Type">
+      <input type="text" id="staticType" name="Type" [(ngModel)]="studentEdit.Type">
     </div>
   </div>
   <div class="form-group row">
     <label for="staticCore" class="col-sm-4 col-form-label">Điểm số</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticCore" value="Điểm số" [(ngModel)]="detaiStudent.score">
+      <input type="text" id="staticCore" name="Điểm số" [(ngModel)]="studentEdit.score">
     </div>
+  </div>
+  <div class="form-group row">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-danger" href="/student">Cancel</a>
   </div>
 </form>
