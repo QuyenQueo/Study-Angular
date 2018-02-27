@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {StudentService} from '../services/student.service';
 
 @Component({
@@ -9,7 +10,10 @@ import {StudentService} from '../services/student.service';
 
 export class StudentComponent implements OnInit {
 
-  constructor(private studentService: StudentService) {}
+  constructor(
+    private studentService: StudentService,
+    private router: Router
+  ) {}
   private listStudent: any[];
   private page: any[];
 
@@ -22,9 +26,13 @@ export class StudentComponent implements OnInit {
   }
 
   delete(id) {
-    this.studentService.Delete(id).subscribe(response => {
-      var confirmStatus = confirm('Bạn có chắc chắn muốn xóa');
-    })
+    var confirmStatus = confirm('Bạn có chắc chắn muốn xóa');
+    if (confirmStatus) {
+      this.studentService.Delete(id).subscribe(response => {
+        this.router.navigate(['student'])
+      })
+    }
+    
   }
 
   ngOnInit() {

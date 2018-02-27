@@ -27,12 +27,6 @@ export class EditStudentComponent implements OnInit, OnDestroy {
       this.studentEdit = student;
     })
   }
-	SaveForm () {
-		this.studentServide.Update(this._id, this.studentEdit).subscribe(response => {
-			console.log('Update du lieu thanh cong')
-			this.router.navigate(['student'])
-		})
-	}
   ngOnInit() {
     this.subscription = this.activatedRoute.params.subscribe(params => {
       this._id = params['id'];
