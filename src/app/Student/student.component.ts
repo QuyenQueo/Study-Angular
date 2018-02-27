@@ -21,6 +21,12 @@ export class StudentComponent implements OnInit {
     );
   }
 
+  delete(id) {
+    this.studentService.Delete(id).subscribe(response => {
+      var confirmStatus = confirm('Bạn có chắc chắn muốn xóa');
+    })
+  }
+
   ngOnInit() {
     this.showListStudent();
     this.page = [1,2,3,4,5];
