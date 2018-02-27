@@ -18,8 +18,8 @@ export class StudentService {
   }
   Update(id, data): Observable<any> {
     return this._http.put(this.apiUrl + '/' + id, data).map((response: Response) => response.json());
-  }
+  } 
   Add(data): Observable<any> {
     return this._http.post(this.apiUrl, data).map((response: Response) => response.json());
-  }
+  } 
 }
