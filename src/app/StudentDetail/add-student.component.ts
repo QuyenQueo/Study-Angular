@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {StudentService} from '../services/student.service';
 
 @Component({
@@ -11,13 +12,14 @@ export class AddStudentComponent implements OnInit {
     public student: any;
     
     constructor(
-        private studentService: StudentService
+        private studentService: StudentService,
+        private router: Router
     ) {}
 
     SaveForm() {
         this.studentService.Add(this.student).subscribe(
             response => {
-                console.log('Them du lieu thanh cong');
+                this.router.navigate(['student'])
             }
         )
     }

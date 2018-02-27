@@ -22,4 +22,7 @@ export class StudentService {
   Add(data): Observable<any> {
     return this._http.post(this.apiUrl, data).map((response: Response) => response.json());
   } 
+  Delete(id): Observable<any> {
+    return this._http.delete(this.apiUrl + '/' + id).map((response: Response) => response.json());
+  } 
 }
