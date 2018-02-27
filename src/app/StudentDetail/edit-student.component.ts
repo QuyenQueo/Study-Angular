@@ -16,7 +16,8 @@ export class EditStudentComponent implements OnInit, OnDestroy {
   public studentEdit: any;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+		private activatedRoute: ActivatedRoute,
+		private router: Router,
     private studentService: StudentService,
     private route: Router
   ) { }
@@ -26,11 +27,16 @@ export class EditStudentComponent implements OnInit, OnDestroy {
       this.studentEdit = student;
     })
   }
-
+	SaveForm () {
+		this.studentServide.Update(this._id, this.studentEdit).subscribe(response => {
+			console.log('Update du lieu thanh cong')
+			this.router.navigate(['student'])
+		})
+	}
   ngOnInit() {
     this.subscription = this.activatedRoute.params.subscribe(params => {
       this._id = params['id'];
-      this.showStudentEdit(this._id);
+			this.showStudentEdit(this._id);
     });
   }
   SaveForm() {

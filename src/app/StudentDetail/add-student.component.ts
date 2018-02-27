@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {StudentService} from '../services/student.service';
 
 @Component({
     selector: 'add-student',
@@ -6,6 +7,22 @@ import {Component} from '@angular/core';
     styleUrls: ['add-student.component.css']
 })
 
-export class AddStudentComponent {
+export class AddStudentComponent implements OnInit {
+    public student: any;
     
+    constructor(
+        private studentService: StudentService
+    ) {}
+
+    SaveForm() {
+        this.studentService.Add(this.student).subscribe(
+            response => {
+                console.log('Them du lieu thanh cong');
+            }
+        )
+    }
+
+    ngOnInit() {
+        this.student = {};
+    }
 }
