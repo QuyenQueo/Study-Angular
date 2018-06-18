@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from './services/login.service';
+// import { LoginService } from './services/login.service';
 
 // let bien: string|number = 12;
 // interface Hocsinh {
@@ -24,24 +24,24 @@ import { LoginService } from './services/login.service';
 // printInfo(quyen);
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent implements OnInit {
 
-	public isLogin: boolean;
+    public isLogin: boolean;
 
-	constructor(
-		private loginService: LoginService
-	) {}
+    constructor(
+        // private loginService: LoginService
+    ) {}
 
-	ngOnInit() {
-	}
-	
-	Logout() {
-		this.loginService.SetLogin(false);
-		alert('Bạn đã Logout')
-	}
+    ngOnInit() {
+    }
+
+    Logout() {
+        // this.loginService.SetLogin(false);
+        alert('Bạn đã Logout');
+    }
 }

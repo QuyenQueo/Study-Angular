@@ -4,47 +4,45 @@ import { NgForOf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { LoginService } from './services/login.service';
 
 import { AppComponent } from './app.component';
+
+import { WebClientPageModule } from './exe-one/exe-one.module';
+
 import { HeroesComponent } from './HeroesComponent/heroes.component';
 import { HighlightDirective } from './HeroesComponent/highlight.directive';
-import { StudentComponent } from './Student/student.component';
-import { StudentService } from './services/student.service';
 import { HomeComponent } from './Home/home.component';
-import { appRoutes } from './app.routes';
-import { DetailStudentComponent } from './StudentDetail/detailstudent.component';
+import { routing } from './app.routes';
 import { LoginComponent } from './Login/login.component';
 import { NotFoundComponent } from './404/404';
 import { CheckLoginGuard } from './guards/check-login.guard';
-import { EditStudentComponent } from './StudentDetail/edit-student.component';
-import { AddStudentComponent } from './StudentDetail/add-student.component';
+import { RouterModule, Route } from '@angular/router';
+
+const appRouter = [
+    ...routing,
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HighlightDirective,
-    StudentComponent,
-    HomeComponent,
-    NotFoundComponent,
-    DetailStudentComponent,
-    LoginComponent,
-    EditStudentComponent,
-    AddStudentComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    HttpModule,
-    appRoutes,
-    FormsModule,
-  ],
-  providers: [
-    StudentService,
-    LoginService,
-    CheckLoginGuard
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeroesComponent,
+        HighlightDirective,
+        HomeComponent,
+        NotFoundComponent,
+        LoginComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        HttpModule,
+        FormsModule,
+        RouterModule.forRoot(appRouter),
+        WebClientPageModule,
+    ],
+    providers: [
+        CheckLoginGuard
+    ],
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }

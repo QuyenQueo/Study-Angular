@@ -6,8 +6,8 @@ import { ConfigService } from './config.service';
 })
 
 export class ConfigComponent {
-  constructor(private configService: ConfigService) {}
-  showConfig() {
-    this.configService.getConfig().subscribe()
-  }
+    constructor(private configService: ConfigService) {}
+    showConfig() {
+        this.configService.getConfig().subscribe()
+    }
 }
