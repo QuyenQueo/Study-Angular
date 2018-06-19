@@ -6,14 +6,18 @@
 			</a>
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto nav">
-		      	<li><a routerLink="/">Home</a></li>
-				<li><a routerLink="/student">Student</a></li>
-				<li><a routerLink="/login">Login</a></li>
-				<li><a routerLink="/" (click)="Logout()">Logout</a></li>
+                <li><a routerLink="/">Home</a></li>
+                <li><a [routerLink]="['/student']">Student</a></li>
+                <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/" (click)="Logout()">Logout</a></li>
 		    </ul>
 		  </div>
 		</nav>
 		<div class="clearfix"></div>
 	</div>
-  	<router-outlet></router-outlet>
+	<router-outlet></router-outlet>
+    <router-outlet name="widget-button"></router-outlet>
+    <router-outlet name="widget-list"></router-outlet>
+    <router-outlet name="widget-typography"></router-outlet>
 </div>
