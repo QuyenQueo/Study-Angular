@@ -1,7 +1,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
+import { TemplateDrivenModule } from './template-driven/item.module';
+
 @NgModule({
     imports: [
+        TemplateDrivenModule,
     ],
     declarations: [],
     entryComponents: [],
@@ -9,5 +12,5 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class WebClientPageModule {
+export class ExeFormPageModule {
 }

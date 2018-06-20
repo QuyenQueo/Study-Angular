@@ -1,31 +1,28 @@
 import { NgModule } from '@angular/core';
 import { itemRoute } from './item.route';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { StudentComponent } from './student.component';
-import { NoteComponent } from './note.component';
+import { TemplateDrivenComponent } from './template-driven.component';
 import { RouterModule } from '@angular/router';
 
-import { StudentService } from '../services/student.service';
-
-const ENTITY_STATES = [
+const ENTITY_STATES1 = [
     ...itemRoute,
 ];
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(ENTITY_STATES),
+        FormsModule,
+        RouterModule.forChild(ENTITY_STATES1),
     ],
     declarations: [
-        StudentComponent,
-        NoteComponent,
+        TemplateDrivenComponent,
     ],
     entryComponents: [],
     providers: [
-        StudentService,
     ],
 })
 
-export class StudentModule {
+export class TemplateDrivenModule {
 }

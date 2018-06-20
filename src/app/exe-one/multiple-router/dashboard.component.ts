@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
         if (this.sectionTypography) {
             params.push('widget-typography:widget-typography');
         }
-        let urlFinal: string = '/dashboard';
+        let urlFinal = '/dashboard';
         if (params.length > 0) {
             urlFinal += '(' + params.join('//') + ')';
         }

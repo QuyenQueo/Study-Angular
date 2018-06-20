@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgForOf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { WebClientPageModule } from './exe-one/exe-one.module';
+import { ExeFormPageModule } from './exe-form/exe-form.module';
 
 import { HeroesComponent } from './HeroesComponent/heroes.component';
 import { HighlightDirective } from './HeroesComponent/highlight.directive';
@@ -36,8 +36,9 @@ const appRouter = [
         HttpClientModule,
         HttpModule,
         FormsModule,
-        RouterModule.forRoot(appRouter),
         WebClientPageModule,
+        ExeFormPageModule,
+        RouterModule.forRoot(appRouter),
     ],
     providers: [
         CheckLoginGuard

@@ -8,16 +8,12 @@ body {
 .container {
 	width: 1280px;
     margin: 0 auto;
-    background: #1976d2;
     padding: 10px 15px;
-    color: #fff;
+    background: #ddd;
 }
 .nav li {
     display: inline-block;
     padding: 10px;
-}
-a {
-	color: #fff
 }
 .logo, .nav {
     float: left;
@@ -27,6 +23,16 @@ a {
 }
 .nav li {
     font-size: 19px;
+}
+.ng-untouched.ng-invalid:not(form) {
+    border-left: 1px solid #ced4da;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
 }
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
