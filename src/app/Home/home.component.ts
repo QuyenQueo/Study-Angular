@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
+    message = 'Cái này từ thằng cha truyền cho thằng con';
+
+    toggle($event) {
+        console.log('component cha', $event);
+    }
 }

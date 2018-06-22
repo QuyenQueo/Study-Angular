@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="formProfile" (ngSubmit)="onSubmit(formProfile.value)">
+            <div class="form-group">
+                <label class="label">User Name</label>
+                <input type="name" class="form-control" placeholder="UserName..."
+                        formControlName="username"
+                        name="username">
+                    <span class="label label-danger" *ngIf="
+                        formProfile.controls.username.touched &&
+                        formProfile.controls.username.errors?.required">Username: Required</span>
+            </div>
+            <div class="form-group">
+                <label class="label">Email</label>
+                <input type="email" class="form-control" placeholder="name@example.com"
+                    formControlName="email"
+                    name="email">
+                <span class="label label-danger" *ngIf="
+                        formProfile.controls.email.touched &&
+                        formProfile.controls.email.errors?.required">Email: Required</span>
+                <span class="label label-danger" *ngIf="
+                        formProfile.controls.email.dirty &&
+                        formProfile.controls.email.errors?.invalidEmail">Email: Invalid</span>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label class="label">Facebook</label>
+                    <input type="text" class="form-control" placeholder="Facebook"
+                        formControlName="facebook"
+                        name="facebook">
+                </div>
+                <div class="form-group">
+                    <label class="label">Website</label>
+                    <input type="text" class="form-control" placeholder="Website"
+                        formControlName="website"
+                        name="website">
+                </div>
+            </div>
+            
+            <button type="submit" [disabled]="!formProfile.valid" class="btn btn-primary">Submit</button>
+            <button type="submit" (click)="onBindData()" class="btn btn-info">Data Binding</button>
+            <button type="button" (click)="onResetForm(formProfile)" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Result
+            </div>
+            <div class="card-body">
+                <h2>Input:</h2> {{ profile | json }}
+                <ul class="list-group">
+                    <li class="list-group-item">{{profile.username}}</li>
+                    <li class="list-group-item">{{profile.email}}</li>
+                    <li class="list-group-item">{{profile.facebook}}</li>
+                    <li class="list-group-item">{{profile.website}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

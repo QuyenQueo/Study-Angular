@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 // import { LoginService } from './services/login.service';
 
 // let bien: string|number = 12;
@@ -30,7 +31,6 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-
     public isLogin: boolean;
 
     constructor(

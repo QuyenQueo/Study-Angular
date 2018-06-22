@@ -5,40 +5,46 @@
                 Profile
             </div>
             <div class="card-body">
-                <form #formProfile="ngForm" (ngSubmit)="onSubmit(formProfile.value)">
+                <form #formProfile="ngForm" novalidate autocomplete="false" (ngSubmit)="onSubmit(formProfile.value)">
                     <div class="form-group">
                         <label>User Name</label>
                         <input type="name" class="form-control" placeholder="UserName..."
-                                #username
+                                #username="ngModel"
                                 [(ngModel)]="profile.username"
                                 required
+                                minlength="5"
                                 name="username">
+                        <span class="label label-danger" *ngIf="username.dirty && username.errors?.required">UserName: required</span>
+                        <span class="label label-danger" *ngIf="username.dirty && username.errors?.minlength">Minlength 5 character</span>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-control" placeholder="name@example.com" 
-                            #email
+                            #email="ngModel"
                             required
                             pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
                             [(ngModel)]="profile.email"
                             name="email">
                     </div>
-                    <div class="form-group">
-                        <label>Facebook</label>
-                        <input type="text" class="form-control" placeholder="Facebook"
-                            #facebook
-                            [(ngModel)]="profile.facebook"
-                            minlength="5"
-                            name="facebook">
+                    <div ngModelGroup="socials">
+                        <div class="form-group">
+                            <label>Facebook</label>
+                            <input type="text" class="form-control" placeholder="Facebook"
+                                #facebook="ngModel"
+                                [(ngModel)]="profile.facebook"
+                                minlength="5"
+                                name="facebook">
+                        </div>
+                        <div class="form-group">
+                            <label>Website</label>
+                            <input type="text" class="form-control" placeholder="Website"
+                                #website
+                                minlength="5"
+                                [(ngModel)]="profile.website"
+                                name="website">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Website</label>
-                        <input type="text" class="form-control" placeholder="Website"
-                            #website
-                            minlength="5"
-                            [(ngModel)]="profile.website"
-                            name="website">
-                    </div>
+                    
                     <button type="submit" [disabled]="!formProfile.valid" class="btn btn-primary">Submit</button>
                     <button type="button" (click)="onResetForm(formProfile)" class="btn btn-danger">Reset</button>
                 </form>

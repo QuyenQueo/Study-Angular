@@ -1,7 +1,8 @@
 <div class="body">
-	<br>
-	<br>
-	<h2 class="text-center">Chào mừng bạn đến với list Sinh viên</h2>
-	<br>
+	<div class="alert alert-primary text-center" role="alert">
+		<h2>Chào mừng bạn đến với list Sinh viên</h2>
+	</div>
+	<app-ref-out-in [rmessage]="message"
+					(answer)="toggle($event)"></app-ref-out-in>
 	<br>
 </div>

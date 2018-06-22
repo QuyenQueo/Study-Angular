@@ -1,0 +1,25 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">@Input</h4>
+            <p>{{ rmessage }}</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">@Output</h4>
+            <br>
+            <div class="alert alert-warning" role="alert">
+                Bạn là Vừng phải không?
+            </div>
+            <button type="button" (click)="stoggle(1)" class="btn btn-success">Yes</button>
+            <button type="button" (click)="stoggle(0)" class="btn btn-danger">No</button>
+            <div class="alert alert-warning" role="alert">
+                Bạn Vừng lớn chưa?
+            </div>
+            <button type="button" (click)="onClick(1)" class="btn btn-success">Yes</button>
+            <button type="button" (click)="onClick(0)" class="btn btn-danger">No</button>
+        </div>
+    </div>
+</div>

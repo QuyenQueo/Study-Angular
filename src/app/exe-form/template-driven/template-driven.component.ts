@@ -34,6 +34,7 @@ export class TemplateDrivenComponent implements OnInit {
 
     onSubmit(value: any) {
         this.resultProfile = value;
+        console.log(value);
     }
 
     ngOnInit() {

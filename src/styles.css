@@ -24,15 +24,27 @@ body {
 .nav li {
     font-size: 19px;
 }
-.ng-untouched.ng-invalid:not(form) {
+input.ng-untouched.ng-invalid:not(form) {
     border-left: 1px solid #ced4da;
 }
-.ng-valid[required], .ng-valid.required  {
+input.ng-valid[required], input.ng-valid.required  {
     border-left: 5px solid #42A948; /* green */
 }
 
-.ng-invalid:not(form)  {
+input.ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
+}
+
+.label {
+    font-weight: bold;
+}
+
+.label-danger {
+    color: #fff;
+    background: #c30808;
+    font-size: 12px;
+    padding: 0px 5px 2px;
+    border-radius: 3px;
 }
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)

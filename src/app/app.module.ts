@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { WebClientPageModule } from './exe-one/exe-one.module';
 import { ExeFormPageModule } from './exe-form/exe-form.module';
+import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
 
 import { HeroesComponent } from './HeroesComponent/heroes.component';
 import { HighlightDirective } from './HeroesComponent/highlight.directive';
@@ -30,6 +31,7 @@ const appRouter = [
         HomeComponent,
         NotFoundComponent,
         LoginComponent,
+        RefOutInComponent,
     ],
     imports: [
         BrowserModule,
