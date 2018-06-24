@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-home',
@@ -8,8 +8,17 @@ import { Component } from '@angular/core';
 
 export class HomeComponent {
     message = 'Cái này từ thằng cha truyền cho thằng con';
+    colorText = 'black';
 
     toggle($event) {
         console.log('component cha', $event);
+    }
+
+    onClick() {
+        this.colorText = "black";
+    }
+
+    eventChangeColora($event) {
+        this.colorText = $event;
     }
 }

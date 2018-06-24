@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 
 import { WebClientPageModule } from './exe-one/exe-one.module';
 import { ExeFormPageModule } from './exe-form/exe-form.module';
-import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
 
+import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
+import { PreviewerComponent } from './exe-three/setting-color/preview.component';
+import { ControlComponent } from './exe-three/setting-color/control.component';
 import { HeroesComponent } from './HeroesComponent/heroes.component';
 import { HighlightDirective } from './HeroesComponent/highlight.directive';
 import { HomeComponent } from './Home/home.component';
@@ -32,6 +34,8 @@ const appRouter = [
         NotFoundComponent,
         LoginComponent,
         RefOutInComponent,
+        PreviewerComponent,
+        ControlComponent,
     ],
     imports: [
         BrowserModule,
