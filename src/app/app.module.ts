@@ -13,7 +13,10 @@ import { ExeFormPageModule } from './exe-form/exe-form.module';
 import { ExeHttpPageModule } from './exe-httpClient/exe-httpClient.module';
 
 /**Import Component */
+
 import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
+import { PreviewerComponent } from './exe-three/setting-color/preview.component';
+import { ControlComponent } from './exe-three/setting-color/control.component';
 import { HeroesComponent } from './HeroesComponent/heroes.component';
 import { HomeComponent } from './Home/home.component';
 import { routing } from './app.routes';
@@ -42,6 +45,8 @@ const appRouter = [
         RefOutInComponent,
         Highlight2Directive,
         HighlightComponent,
+        PreviewerComponent,
+        ControlComponent,
     ],
     imports: [
         BrowserModule,

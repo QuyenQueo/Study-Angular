@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // import { HomeService } from './home.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class HomeComponent {
     student: any = {
         userName: 'Quyen',
     };
+    colorText = 'black';
 
     constructor(
     ) {}
@@ -26,5 +27,13 @@ export class HomeComponent {
 
     toggle($event) {
         console.log('component cha', $event);
+    }
+
+    onClick() {
+        this.colorText = "black";
+    }
+
+    eventChangeColora($event) {
+        this.colorText = $event;
     }
 }
