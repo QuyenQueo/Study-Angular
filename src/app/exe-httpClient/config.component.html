@@ -1,0 +1,16 @@
+<!-- <ul>
+    <li *ngFor="let item of config">
+        <span>{{ item.id }}</span>
+        <span>{{ item.name }}</span>
+    </li>
+</ul> -->
+
+<p>Config Component</p>
+
+<form #creatStudent="ngForm" (ngSubmit)="save(creatStudent.value)">
+    <input type="text"
+        name="studentName"
+        #studentName="ngModel"
+        [(ngModel)]="student.studentName">
+    <button type="submit"> new student</button>
+</form>

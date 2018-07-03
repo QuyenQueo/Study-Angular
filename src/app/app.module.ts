@@ -8,10 +8,15 @@ import { RouterModule, Route } from '@angular/router';
 import { AppComponent } from './app.component';
 
 /**Import module */
+
+/**Import Module */
 import { WebClientPageModule } from './exe-one/exe-one.module';
 import { ExeFormPageModule } from './exe-form/exe-form.module';
+import { ExeHttpPageModule } from './exe-httpClient/exe-httpClient.module';
 
 /* Import Component */
+/**Import Component */
+
 import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
 import { DescriptionComponent } from './exe-pipe/description/description.component';
 import { PreviewerComponent } from './exe-three/setting-color/preview.component';
@@ -23,10 +28,16 @@ import { LoginComponent } from './Login/login.component';
 import { NotFoundComponent } from './404/404';
 import { CheckLoginGuard } from './guards/check-login.guard';
 import { HighlightComponent } from './exe-directive/highlight.component';
+import { RouterModule } from '@angular/router';
+import { HighlightComponent } from './exe-directive/highlight.component';
 
 /**Import Pipe, Directive */
 import { CapitalizePipe } from './exe-pipe/description/capitalize.pipe';
 import { HighlightDirective } from './exe-directive/highlight.directive';
+
+/**Import Pipe, Directive */
+import { Highlight2Directive } from './exe-directive/highlight.directive';
+import { HighlightDirective } from './HeroesComponent/highlight.directive';
 
 const appRouter = [
     ...routing,
@@ -41,6 +52,8 @@ const appRouter = [
         NotFoundComponent,
         LoginComponent,
         RefOutInComponent,
+        Highlight2Directive,
+        HighlightComponent,
         PreviewerComponent,
         ControlComponent,
         DescriptionComponent,
@@ -54,6 +67,7 @@ const appRouter = [
         FormsModule,
         WebClientPageModule,
         ExeFormPageModule,
+        ExeHttpPageModule,
         RouterModule.forRoot(appRouter),
     ],
     providers: [

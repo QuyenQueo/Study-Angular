@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+// import { HomeService } from './home.service';
 
 @Component({
     selector: 'app-home',
@@ -8,7 +9,21 @@ import { Component, Input } from '@angular/core';
 
 export class HomeComponent {
     message = 'Cái này từ thằng cha truyền cho thằng con';
+    student: any = {
+        userName: 'Quyen',
+    };
     colorText = 'black';
+
+    constructor(
+    ) {}
+
+    save() {
+        // this.homeService.addStudent().subscrible(
+        //     (res) => {
+        //         console.log(res);
+        //     }
+        // );
+    }
 
     toggle($event) {
         console.log('component cha', $event);
