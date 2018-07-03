@@ -6,18 +6,26 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+
+/**Import Module */
 import { WebClientPageModule } from './exe-one/exe-one.module';
 import { ExeFormPageModule } from './exe-form/exe-form.module';
-import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
+import { ExeHttpPageModule } from './exe-httpClient/exe-httpClient.module';
 
+/**Import Component */
+import { RefOutInComponent } from './exe-three/ref-out-in/ref-out-in.component';
 import { HeroesComponent } from './HeroesComponent/heroes.component';
-import { HighlightDirective } from './HeroesComponent/highlight.directive';
 import { HomeComponent } from './Home/home.component';
 import { routing } from './app.routes';
 import { LoginComponent } from './Login/login.component';
 import { NotFoundComponent } from './404/404';
 import { CheckLoginGuard } from './guards/check-login.guard';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HighlightComponent } from './exe-directive/highlight.component';
+
+/**Import Pipe, Directive */
+import { Highlight2Directive } from './exe-directive/highlight.directive';
+import { HighlightDirective } from './HeroesComponent/highlight.directive';
 
 const appRouter = [
     ...routing,
@@ -32,6 +40,8 @@ const appRouter = [
         NotFoundComponent,
         LoginComponent,
         RefOutInComponent,
+        Highlight2Directive,
+        HighlightComponent,
     ],
     imports: [
         BrowserModule,
@@ -40,6 +50,7 @@ const appRouter = [
         FormsModule,
         WebClientPageModule,
         ExeFormPageModule,
+        ExeHttpPageModule,
         RouterModule.forRoot(appRouter),
     ],
     providers: [
