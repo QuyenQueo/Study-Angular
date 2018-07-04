@@ -1,9 +1,3 @@
-<!-- <ul>
-    <li *ngFor="let item of config">
-        <span>{{ item.id }}</span>
-        <span>{{ item.name }}</span>
-    </li>
-</ul> -->
 
 <p>Config Component</p>
 
@@ -14,3 +8,19 @@
         [(ngModel)]="student.studentName">
     <button type="submit"> new student</button>
 </form>
+<br> 
+<input (keyup)="search($event.target.value)" id="name" placeholder="search">
+
+<ul>
+    <li *ngFor="let package of package$" | async>
+        <b>{{ package.name }} v.{{ package.version }}</b> - 
+        <i>{{ package.description }}</i>
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let item of config1">
+        <span>{{ item.id }}</span>
+        <span>{{ item.studentName }}</span>
+    </li>
+</ul>

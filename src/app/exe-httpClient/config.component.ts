@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from './config.service';
 import { Config } from './config.model';
-
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 @Component({
     selector: 'app-config-name',
     templateUrl: './config.component.html',
@@ -12,6 +13,9 @@ export class ConfigComponent implements OnInit {
     student: any = {};
     error: any;
     headers: any;
+    withRefresh = false;
+    // packages$: Observable<NpmPackageInfo[]>;
+    private searchText$ = new Subject<string>();
 
     constructor(
         private configService: ConfigService,
@@ -55,7 +59,17 @@ export class ConfigComponent implements OnInit {
         );
     }
 
+    search(packageName: string) {
+        this.searchText$.next(packageName);
+    }
+
     ngOnInit(): void {
+        // this.packages$ = this.searchText$.pipe(
+        //     debounceTime(500),
+        //     distinctUntilChanged(),
+        //     switchMap(packageName =>
+        //     this.searchService.search(packageName, this.withRefresh))
+        // );
         this.showConfig();
         this.showConfigResponse();
     }
