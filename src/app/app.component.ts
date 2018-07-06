@@ -32,6 +32,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
     public isLogin: boolean;
+    title = 'Title of heroes';
 
     constructor(
         // private loginService: LoginService
